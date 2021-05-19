@@ -4,32 +4,43 @@ class Inventory:
     select = []
 
     def replace(self, cell:int, value):
+        # слот:
         cell %= 36
+
+        # содержимое для слота:
         value %= 65536
 
+        # очищаем содержимое слота:
         self.inventory[cell].clear()
-        self.inventory[cell].append(value)#65536
 
-        print(self.inventory)
+        # вставляем в слот свое содержимое:
+        self.inventory[cell].append(value)
 
     def select_cell_panel(self, cell_panel, cell):
+        # ячейка панели:
         cell_panel %= 9
+
+        # слот:
         cell %= 36
-        print(cell, cell_panel)
 
+        # привязка выбранного слота к ячейке:
         self.panel[cell_panel] = self.inventory[cell]
-        # return cell
 
-    def select_cell():
-        pass
+
+    def select_cell(self, cell_panel:int):
+        # ячейка панели:
+        cell_panel %= 9
+
+        # то что мы выбрали в руке
+        self.select = self.panel[cell_panel]
 
     def __init__(self):
         self.inventory = [
-            [],[],[],[],[],[],[],[],[],
-            [],[],[],[],[],[],[],[],[],
-            [],[],[],[],[],[],[],[],[],
+            [ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],
+            [ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],
+            [ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],
 
-            [],[],[],[],[],[],[],[],[]
+            [ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ],[ ]
         ]
 
         self.panel = [[] for x in range(9)]
