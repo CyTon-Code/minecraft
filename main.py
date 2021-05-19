@@ -47,6 +47,8 @@ class Inventory:
 
 tmp = Inventory()
 tmp.replace(27, 4)
-print(tmp.select, tmp.panel)
+print(tmp.select)
+print(tmp.panel)
 tmp.replace(27, 2)
-print(tmp.select, tmp.panel)
+print(tmp.select)
+print(tmp.panel)
