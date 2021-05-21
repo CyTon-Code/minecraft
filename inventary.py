@@ -4,6 +4,9 @@ class Inventory:
     select = []
 
     def replace(self, cell:int, value):
+        """
+            Вставка id-Обьекта в слот инвентаря
+        """
         # слот:
         cell %= 36
 
