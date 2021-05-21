@@ -1,6 +1,11 @@
 class Inventory:
+    # инвентарь:
     inventory = []
+
+    # 9 указателей на слоты интвентаря:
     panel = []
+
+    # указатель на слот панели, который сейчас в руке:
     select = []
 
     def replace(self, cell:int, value):
